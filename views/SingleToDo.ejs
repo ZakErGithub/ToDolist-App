@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./nav.css" />
+  </head>
+  <body>
+    <%- include('./partial/navbar.ejs') %>
+    <div class="container">
+      <h1>To Do List</h1>
+      <ul id="todo-list">
+        <li>
+          <div class="todo-item">
+            <span class="todo-title">todos[i].title</span>
+            <h3><%= todos[i].id %></h3>
+            <p><%= todos[i].description %></p>
+            <li><%= todos[i].completed %></li>
+            <div class="buttons">
+              <button class="update">
+                <a href="/update/<%= todo.id %>">update</a>
+              </button>
+              <button class="delete">
+                <a href="/delete/<%= todo.id %>">delete</a>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

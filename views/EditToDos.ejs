@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Task</title>
+    <link rel="stylesheet" href="../formStyle.css" />
+    <link rel="stylesheet" href="../nav.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Task <%= todo.id%></h1>
+      <form id="add-task-form" action="/update/<%= todo.id %>" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required value="<%= todo.title %>" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"  value="<%= todo.description %>"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="completed">Completed:</label>
+          <input type="text" id="completed" name="completed" value="<%= todo.completed %>"/>
+        </div>
+        <div class="form-group">
+          <!--
+            <label for="user_id">User ID:</label>
+          <input type="text" id="user_id" name="user_id" />
+          -->
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+  </body>
+</html>
